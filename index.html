@@ -634,11 +634,107 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════
+           CTA CV SECTION
+        ═══════════════════════════════════════════════════════════════ */
+        .cta-cv {
+            padding: 100px 24px;
+            background: var(--bg-secondary);
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-cv::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .cta-cv::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-cv-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-cv-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 36px;
+        }
+
+        .cta-cv-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(24px, 5vw, 40px);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .cta-cv-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .cta-cv-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 36px;
+            background: var(--accent);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-family: 'Syne', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px -10px rgba(230, 57, 70, 0.5);
+        }
+
+        .cta-cv-btn:hover {
+            background: var(--accent-dim);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px -15px rgba(230, 57, 70, 0.6);
+        }
+
+        .cta-cv-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
            FOOTER
         ═══════════════════════════════════════════════════════════════ */
         .footer {
             padding: 80px 24px;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             text-align: center;
             position: relative;
         }
@@ -781,6 +877,11 @@
                 gap: 16px;
             }
             .person-photo { width: 70px; height: 70px; margin-bottom: 0; flex-shrink: 0; }
+            
+            .cta-cv { padding: 80px 16px; }
+            .cta-cv-icon { width: 60px; height: 60px; font-size: 28px; }
+            .cta-cv-btn { padding: 16px 28px; font-size: 14px; }
+            
             .social-links { flex-direction: column; align-items: center; }
             .social-link { width: 100%; max-width: 280px; justify-content: center; }
         }
@@ -811,6 +912,8 @@
             .testimonials { padding: 48px 8px; }
             .testimonial-card { padding: 12px; }
             .person-photo { width: 60px; height: 60px; }
+            
+            .cta-cv { padding: 60px 12px; }
         }
     </style>
 </head>
@@ -939,7 +1042,7 @@
                     </div>
                 </article>
 
-                 <article class="testimonial-card fade-in">
+                <article class="testimonial-card fade-in">
                     <div class="testimonial-content">
                         <div class="testimonial-video">
                            <iframe src="https://www.loom.com/embed/86b7cc22eb9d4b8b8531e0003acfdecd" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width:100%;height:100%;border:none;border-radius:20px;"></iframe>
@@ -957,9 +1060,22 @@
                         </div>
                     </div>
                 </article>
-                
-              
             </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CTA CV SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="cta-cv fade-in">
+        <div class="cta-cv-content">
+            <div class="cta-cv-icon">📄</div>
+            <h2 class="cta-cv-title">Besoin du format classique ?</h2>
+            <p class="cta-cv-text">Téléchargez mon CV pour avoir tous les détails de mon parcours, mes compétences et mes expériences en un seul document.</p>
+            <a href="cv-nathan-orrye.pdf" download class="cta-cv-btn">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Télécharger mon CV
+            </a>
         </div>
     </section>
 
